@@ -22,9 +22,14 @@ public class ProductDto {
     private BigDecimal price;
     private String brand;
     private Float rating;
+    private Integer discount;
+    private String slug;
     private Boolean isNewArrival;
+    private String thumbnail;
     private UUID categoryId;
+    private String categoryName;
     private UUID categoryTypeId;
+    private String categoryTypeName;
     private List<ProductVariantDto> productVariants;
     private List<ResourceDto> resources;
 }

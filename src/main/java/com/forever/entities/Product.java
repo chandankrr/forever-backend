@@ -40,8 +40,14 @@ public class Product {
     @Column
     private Float rating;
 
+    @Column
+    private Integer discount;
+
     @Column(nullable = false)
     private Boolean isNewArrival;
+
+    @Column(nullable = false, unique = true)
+    private String slug;
 
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
