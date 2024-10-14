@@ -2,10 +2,8 @@ package com.forever.dtos;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import com.forever.entities.Address;
 import lombok.*;
 
-import java.util.List;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -14,13 +12,10 @@ import java.util.UUID;
 @Setter
 @Builder
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class UserDetailsDto {
+public class OrderItemRequest {
 
-    private UUID id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phoneNumber;
-    private Object authorityList;
-    private List<Address> addresses;
+    private UUID productId;
+    private UUID productVariantId;
+    private Double discount;
+    private Integer quantity;
 }

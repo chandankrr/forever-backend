@@ -8,6 +8,7 @@ import com.forever.repositories.ProductRepository;
 import com.forever.services.ProductService;
 import com.forever.utils.ProductSpecification;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.BadRequestException;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -80,6 +81,11 @@ public class ProductServiceImpl implements ProductService {
         productRepository.findById(productDto.getId()).orElseThrow(() ->
                 new ResourceNotFoundException("Product not found with id: " + productDto.getId()));
         return productRepository.save(productMapper.mapToProduct(productDto));
+    }
+
+    @Override
+    public Product fetchProductById(UUID id) throws BadRequestException {
+        return productRepository.findById(id).orElseThrow(BadRequestException::new);
     }
 
 }

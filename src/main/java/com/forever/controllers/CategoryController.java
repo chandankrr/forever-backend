@@ -13,7 +13,6 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/category")
-@CrossOrigin
 @RequiredArgsConstructor
 public class CategoryController {
 

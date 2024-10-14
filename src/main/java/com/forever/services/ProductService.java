@@ -2,6 +2,7 @@ package com.forever.services;
 
 import com.forever.dtos.ProductDto;
 import com.forever.entities.Product;
+import org.apache.coyote.BadRequestException;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,4 +14,5 @@ public interface ProductService {
     ProductDto getProductBySlug(String slug);
     ProductDto getProductById(UUID id);
     Product updateProduct(ProductDto productDto);
+    Product fetchProductById(UUID id) throws BadRequestException;
 }

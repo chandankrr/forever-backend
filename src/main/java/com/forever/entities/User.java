@@ -56,6 +56,10 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(referencedColumnName = "id"))
     private List<Authority> authorities;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    private List<Address> addresses;
+
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.DATE)
     private Date createdOn;
