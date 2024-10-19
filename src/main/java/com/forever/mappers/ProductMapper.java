@@ -1,4 +1,4 @@
-package com.forever.mapper;
+package com.forever.mappers;
 
 import com.forever.dtos.ProductDto;
 import com.forever.dtos.ProductVariantDto;
